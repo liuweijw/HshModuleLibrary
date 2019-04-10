@@ -9,15 +9,15 @@ ext {
 
     android = [
             applicationId    : "com.github.liuweijw.hshmodulelibrary",
-            compileSdkVersion: 27,
+            compileSdkVersion: 28,
             minSdkVersion    : 16,
-            targetSdkVersion : 27,
-            versionCode      : 1,
-            versionName      : "1.0.0"
+            targetSdkVersion : 28,
+            versionCode      : 2,
+            versionName      : "1.0.1"
     ]
 
     // support
-    supportLibraryVersion = '27.0.2'
+    supportLibraryVersion = '+'
 
     dependencies = [
             recyclerView                    : "com.android.support:recyclerview-v7:${supportLibraryVersion}",
@@ -30,7 +30,7 @@ ext {
 
             gson                            : "com.google.code.gson:gson:2.6.2",
             universalimageloader            : "com.nostra13.universalimageloader:universal-image-loader:1.9.5",
-            banner                          : "com.youth.banner:banner:1.4.9",
+            banner                          : "com.youth.banner:banner:1.4.10",
             eventbus                        : "org.greenrobot:eventbus:3.1.1",
             aes_crypto                      : "com.scottyab:aes-crypto:0.0.5",
             amap_location                   : "com.amap.api:location:latest.integration",
@@ -41,7 +41,7 @@ ext {
 
     bintray = [
             // library
-            version       : "1.0.0",
+            version       : "1.0.1",
 
             siteUrl       : 'https://github.com/liuweijw/HshModuleLibrary',
             gitUrl        : 'git@github.com:liuweijw/HshModuleLibrary.git',
