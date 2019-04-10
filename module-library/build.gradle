@@ -1,0 +1,46 @@
+apply plugin: rootProject.ext.plugins.library
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+    }
+
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+            options.addStringOption('encoding', 'UTF-8')
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation rootProject.ext.dependencies.appcompat_v7
+    implementation rootProject.ext.dependencies.design
+    implementation rootProject.ext.dependencies.cardview_v7
+    implementation rootProject.ext.dependencies.percent
+    implementation rootProject.ext.dependencies.constraint_layout
+    implementation rootProject.ext.dependencies.recyclerView
+
+    implementation rootProject.ext.dependencies.nohttp
+    implementation rootProject.ext.dependencies.andPermission
+    implementation rootProject.ext.dependencies.gson
+    implementation rootProject.ext.dependencies.universalimageloader
+    implementation rootProject.ext.dependencies.eventbus
+    implementation rootProject.ext.dependencies.banner
+    implementation rootProject.ext.dependencies.aes_crypto
+    implementation rootProject.ext.dependencies.amap_location
+}
+
+// 只发布到 JCenter
+//apply from: "https://github.com/liuweijw/jcenter/blob/master/bintray.gradle?raw=true"
+//它会先发布到Jcenter，手动同步到Maven
+//apply from: 'https://github.com/liuweijw/jcenter/blob/master/maven.gradle?raw=true'
+//它会先发布到Jcenter，并对发布内容进行签名，然后自动同步到Maven
+apply from: 'https://github.com/liuweijw/jcenter/blob/master/maven-auto.gradle?raw=true'
